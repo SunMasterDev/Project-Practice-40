@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #222;
+}
+.container{
+    width: 600px;
+    background: #fff;
+    margin: 200px;
+    border-radius: 5px;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+input{
+    flex: 1;/*เท่ากันทุกๆตัว*/
+    height: 50px;
+    font-size: 18px;
+    outline: none;
+    border: 0;
+}
+ul{
+    border-top: 1px solid gray;
+    padding: 15px 10px; 
+}
+li{
+    cursor: pointer;
+    border-radius: 3px;
+    list-style: none;
+    padding: 15px 10px;
+}
+li:hover{
+    background-color: orange;
+}

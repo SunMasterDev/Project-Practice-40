@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="form" class="form">
+
+            <h2>แบบฟอร์มทะเบียน</h2>
+            <div class="form-control">
+                <label for="username">ชื่อผู้ใช้</label>
+                <input type="text" id="username" placeholder="Enter Your UserName">
+                <small></small>
+            </div>
+
+            <div class="form-control">
+                <label for="Email">อีเมลผู้ใช้</label>
+                <input type="text" id="email" placeholder="Enter Your Email"> <!--type text ไปทำงาน js -->
+                <small></small>
+            </div>
+
+            <div class="form-control">
+                <label for="Password">รหัสผ่าน</label>
+                <input type="password" id="password" placeholder="Enter Your Password">
+                <small>Error password</small>
+            </div>
+
+            <div class="form-control">
+                <label for="Password">ยืนยันรหัสผ่าน</label>
+                <input type="password" id="re-password" placeholder="Enter Your Re-Password">
+                <small>Error password</small>
+            </div>
+            <button type="submit">ลงทะเบียน</button> <!--คนสอนใส่ผิด ต้องเป็น type="submit"-->
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

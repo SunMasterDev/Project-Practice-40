@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #fefaf2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /*ปิดเนื้อหาที่ล้นออกมา*/
+    margin: 0;
+}
+.container{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 30px;
+    max-width: 400px;
+    font-size: 90%;
+    text-align: center;
+}
+.container strong{
+    line-height: 20px; /*ความสูงของเส่น*/
+}
+.rating-container{
+    display: flex;
+    margin: 20px 0;
+}
+.rating{
+    flex: 1; /*ทำให้ทุกส่วนเท่ากัน*/
+    cursor: pointer;
+    padding: 20px;
+    margin: 10px 5px;
+}
+.rating img{
+    width: 50px;
+}
+.rating small{
+    color: #555;
+    display: inline-block;
+    margin: 10px 0 0;
+}
+.rating:hover,.rating.active{/*เลือกแล้ว*/ /*class active*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.btn{
+    background-color: #302d30;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 12px 30px;
+    border-radius: 4px;
+}
+.img-complete{
+    width: 30px;
+    margin-bottom: 10px;
+}

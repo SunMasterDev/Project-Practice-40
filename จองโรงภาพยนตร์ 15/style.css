@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #242323;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /*ความสูงทำให้อยู่ตรงกลาง*/
+}
+.movie-container{
+    margin: 20px 0;
+}
+.movie-container select{
+    background-color:white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px 15px 5px 15px;
+    appearance: none; /*ปิดลูกศรลง ตรงเลือก*/
+    cursor: pointer;
+}
+.seat{
+    background-color: #444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius:10px; /*ปรับที่นั่ง*/
+    border-top-right-radius:10px;
+}
+.row{
+    display: flex;
+}
+.seat.selected{ /*ไม่ต้องเว้นวรรค 2 คลาส*/
+    background-color: greenyellow;
+}
+.seat.occupied{
+    background-color: red;
+}
+.seat:nth-of-type(2){/*2ที่นั่งแต่ละแถว*/
+    margin-right: 18px;
+}
+.seat:nth-last-of-type(2){/*2ตัวสุดท้าย ตัวลูก*/
+    margin-left: 18px;
+}
+.showcase{
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 5px 10px;
+    justify-content: space-between;
+    color: #777;
+    border-radius: 5px;
+}
+.showcase li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+.showcase li small{
+    margin-left: 2px;
+}
+.showcase.seat:not(.occupied):hover{ /*ถ้าไม่ใช่.occupied เวลาชี้ hover*/ /*อย่าวรรคเว้น*/
+    cursor: default;
+    transform: scale(1);
+}
+.seat:not(.occupied):hover{ /*ที่นั่งสำหรับจอง*/
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.screen{ /*พลาด จำคลาสผิด screen */
+    background-color: #fff;
+    width: 100%;
+    height: 70px;
+    margin: 10px 0;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+    transform: rotateX(-45deg); /* อย่าใส่ '' */
+}
+.container{
+    perspective: 1000px; /* Perspective เป็นการทำให้ภาพนั้นดูมีมิติและสมจริง*/
+    margin-bottom:30px ;
+}
+p.text span{
+    color: greenyellow;
+}
+p.text{
+    margin: 5px 0;
+}

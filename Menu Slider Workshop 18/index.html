@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Slider | Workshop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="IMG/gaming-logo-49544.png" alt="">
+        </div>
+        <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">เกี่ยวกับเรา</a></li>
+            <li><a href="#">ติดต่อเรา</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <button id="toggle" class="toggle">
+            <i class="fa fa-bars fa-2x"></i> <!--bars ไม่มีพิมตก s-->
+        </button>
+        <h1>SunMaster.Dev</h1>
+        <p>ฝึกฝนการเขียนโปรแกรมและเรียนรู้</p>
+        <button class="create-account" id="open">สร้างบัญชีผู้ใช้</button>
+    </header>
+    <div class="container">
+        <h2>Wev Development</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed minima ratione recusandae veritatis nobis quidem consequatur maiores nemo velit, illum error. Sequi veritatis fuga recusandae nam officia perferendis cumque vitae doloribus id sed, dolorem obcaecati doloremque nihil cum itaque, minus suscipit. Repellat dolor provident recusandae sunt minus eveniet dignissimos corporis alias, natus quis, placeat iusto non? Velit officia porro qui deleniti repudiandae. Dignissimos, beatae quibusdam tempora et voluptas necessitatibus eos a rerum saepe recusandae odit modi distinctio obcaecati cupiditate atque ratione praesentium, tempore voluptates commodi? Eum numquam reiciendis voluptatum accusantium repudiandae sed reprehenderit, commodi culpa perferendis facere. Incidunt, soluta!</p>
+        <h2>FrontEnd Development</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed minima ratione recusandae veritatis nobis quidem consequatur maiores nemo velit, illum error. Sequi veritatis fuga recusandae nam officia perferendis cumque vitae doloribus id sed, dolorem obcaecati doloremque nihil cum itaque, minus suscipit. Repellat dolor provident recusandae sunt minus eveniet dignissimos corporis alias, natus quis, placeat iusto non? Velit officia porro qui deleniti repudiandae. Dignissimos, beatae quibusdam tempora et voluptas necessitatibus eos a rerum saepe recusandae odit modi distinctio obcaecati cupiditate atque ratione praesentium, tempore voluptates commodi? Eum numquam reiciendis voluptatum accusantium repudiandae sed reprehenderit, commodi culpa perferendis facere. Incidunt, soluta!</p>
+    </div>
+
+    <div class="modal-container" id="modal">
+
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <div class="modal-header">
+                <h3>สร้างบัญชีผู้ใช้</h3>
+            </div>
+
+            <div class="modal-content">
+                <p>แบบฟอร์มสร้างบัญชี</p>
+                <form action="" class="modal-form">
+                    <div>
+                        <label for="">ชื่อผู้ใช้</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div>
+                        <label for="">อีเมล</label>
+                        <input type="email" class="form-input">
+                    </div>
+                    <div>
+                        <label for="">รหัสผ่าน</label>
+                        <input type="password" class="form-input">
+                    </div>
+                    
+                    <input type="submit" value="บันทึก" class="submit-btn">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

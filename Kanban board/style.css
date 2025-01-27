@@ -1,0 +1,89 @@
+:root{
+    --category-1:#a2622d;
+    --category-2:#1b6161;
+    --category-3:#248224;
+    --category-4:#a22d22;
+}
+
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-image: url(https://cdn.pixabay.com/photo/2017/04/25/22/28/despaired-2261021_1280.jpg);
+    background-size: cover;
+    background-position: 50% 60%; /*สามารถใส่เป็นตัวเลข % หรือความยาวก็ได้*/ /*ด้านแนวนอนก่อน ตามด้วยแนวตั้ง*/
+    background-attachment: fixed; /*fixed กำหนดให้รูป background ไม่เลื่อนตามการเลื่อน scroll bar*/
+    color: white;
+    overflow: hidden;
+}
+h1{
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px black;
+}
+.main-title{
+    font-size: 3rem; /*3 เท่าของ root element*/
+    text-align: center;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.drag-container{
+    margin: 20px;
+}
+.drag-list{
+    display: flex;
+    align-items: flex-start;
+}
+.drag-column{
+    flex: 1;
+    margin: 0 10px;
+    position: relative;/*ทำให้ตำแหน่งเท่ากัน*/
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow-x: hidden;
+    border-radius: 10px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+.header h1{
+    font-size: 1.25rem;
+}
+.backlog-column .header{
+    background-color: var(--category-1);
+}
+.progress-column .header{
+    background-color: var(--category-2);
+}
+.complete-column .header{
+    background-color: var(--category-3);
+}
+.reject-column .header{
+    background-color: var(--category-4);
+}
+.custom-scroll{
+    overflow-y: auto;/*เกิดการ scroll แบบอัตโนมัติ*/
+    max-height: 52vh;
+}
+.drag-item-list{
+    min-height: 50px;
+}
+
+.drag-item{
+    margin: 10px;
+    padding: 10px;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    line-height: 1.5rem; /*การกำหนดช่องว่างระหว่างบรรทัด*/
+    letter-spacing: 1px;
+    cursor: pointer;
+}

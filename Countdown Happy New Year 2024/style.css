@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+*{
+    font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(https://images.unsplash.com/photo-1535408913330-a71d0a3e29ba?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    margin: 0;/*ไม่ให้มีการ scroll*/
+    display: flex;
+    overflow: hidden;/*ไม่ให้มีการ scroll*/
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /*แนวตั้ง*/
+}
+body::after{ /*สีฉากหลังของ countdown*/
+    content: "";/*ต้องใส่ เพื่อใช้ after*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+body *{ /* ทั้ง2ตัว */
+    z-index: 1; /*ปรับให้อยู่ด้านหน้า พื้นหลังและสีพื้นหลัง*/
+}
+h1{
+    font-size: 50px;
+    margin: -80 0 40px;
+}
+.countdown{
+    display: flex;
+    transform: scale(2);/*ขยายให้ใหญ่ขึ้น*/
+}
+.time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px; /*ระยะห่าง*/
+}
+h2{
+    margin: 0 0 5px ;
+}
+
+@media(max-width:500px) { /*มือถือ*/
+    h1{
+        font-size: 45px;
+    }
+    .time{
+        margin: 5px;
+    }
+    .time h2{
+        font-size: 12px;
+        margin: 0;
+    }
+    .time small{
+        font-size: 10px;
+    }
+}

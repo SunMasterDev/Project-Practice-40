@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden; /*ปิดการ scroll*/
+    background-color: #dacfea;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23392e49' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+h1{
+    position: relative;
+}
+h1 button{
+    position: relative;
+    right: 0;
+    transform: translate(120%,-50%);/*ย้ายตำแหน่ง*/
+    z-index: 2;
+}
+.btn{
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: 20px;
+    padding: 10px 15px;
+    outline: none;
+    cursor: pointer;
+}
+.btn-small{
+    font-size: 12px;
+    padding: 5px 10px;
+}
+.clear{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+.cards{
+    perspective: 1000px; /*ทำให้มีมิติ ดูสมจริง*/
+    position: relative;
+    width: 500px;
+    height: 300px;
+    max-width: 100%;
+}
+.card{ /*การ์ดยังไม่ทำงาน*/
+    position: absolute;
+    font-size: 1.5em;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%; /*เต็มcontainer*/
+    height: 100%;
+    transform: translateX(50%) rotateY(10deg); /*translate ย้ายตำแหน่ง rotate การหมุน ใน transform */
+    transition: transform 0.4s ease , opacity 0.4s ease;/*การเคลื่อนไหว ease ค่อยๆเริ่มแล้วค่อยๆจบ */
+}
+.card.active{ /*การ์ดด้านหน้าสุด ที่ซ้อนทับกัน*/ /*การ์ดทำงาน*/
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+    cursor: pointer;
+    z-index: 10; /*10การ์ด???*/
+}
+.inner-card{
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3) ;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;/*ภาพทั้งหมดซ้อนทับกันเสมือนเป็น 1 ภาพ*/ /*ทำให้ภาพไม่เป็นมุมสะท้าน คือไม่กลับหัว*/
+    transition: transform 0.4s ease;
+}
+.inner-card-front,.inner-card-back{
+    backface-visibility: hidden; /* เรามักจะใช้ Property นี้ เมื่อทำ Flip Cards ที่มี Hover Effects และมันมีค่าที่เป็นไปได้ 2 ค่า คือ มองเห็นได้ หรือ ซ่อนอยู่*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex; /*display ถึง height ทำให้อยู่ตรงกลางได้*/
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.card.show-answer .inner-card{
+    transform: rotateX(180deg); /*ผิดตรงใส่ ingle quote อย่าใส่*/
+}
+.inner-card-front{
+    transform: rotateX(0deg);
+    z-index: 2;
+}
+.inner-card-back{
+    transform: rotateX(180deg);
+}
+.inner-card-front::after,.inner-card-back::after{ /*ลืมใส่, ทำให้ไม่แสดงผล ต้องใส่เวลามี2pesudo*/
+    content: "Flip";
+    position: absolute;/*กินเต็มพื้นที่*/
+    top: 10px;
+    right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ddd;
+}/* ::after หลังเนื้อหาภายใน */
+.navigation{
+    display: flex;
+    margin: 20px 0;
+}
+
+.navigation .nav-button{ /*class ที่อยู่ด้วยกันในพื้นที่ไม่ต้องเว้นวรรค*/
+   border: none;
+   background: transparent; /*เอาพื้นหลังออก*/
+   cursor: pointer;
+   font-size: 16px;
+}
+.navigation p{
+    margin: 0 25px;
+}
+.btn-hidden{
+    border: 0;
+    background: transparent;
+}
+.add-container{
+    background-color: #f0f0f0;
+    border-top:2px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    bottom:0 ;
+    width: 100%;
+    z-index: -1; /*layer*/
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.add-container.show{
+    z-index: 2; /*layer*/
+    opacity: 1;
+}
+.add-container h3{
+    margin: 10px 0;
+}
+.add-container label{
+    display: block;
+    margin: 20px 0 10px;
+}
+.form-group textarea{
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    padding: 12px;
+    min-width: 500px;
+    min-height: 50%;
+    outline: none;
+}
+.card.left{
+    transform: translate(-50%)rotateY(10deg); /*ย้ายตำแหน่งเวลาเปลี่ยนหน้า*/
+}

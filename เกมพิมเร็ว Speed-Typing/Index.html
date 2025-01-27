@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกมพิมเร็ว Speed-Typing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="level-btn" class="level-btn">
+        <i class="fa-solid fa-gear"></i>
+    </button>
+    
+    <div class="settings" id="settings">
+        <form id="level-form">
+            <label for="">ระดับความยาก</label> <!--tag ไม่ใช่ attribute-->
+            <select name="level" id="level"> 
+                <option value="easy">ง่าย</option>
+                <option value="medium" selected>ปานกลาง</option>
+                <option value="hard">ยาก</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>เกมพิมเร็ว | Speed-Typing</h2>
+        <!-- <small>ฝึกทักษะการพิมพ์</small> คำอธิบายใส่  คือ small -->
+        <h1 id="word" class="word"></h1>
+        <input type="text" id="text" autocomplete="off" placeholder="ป้อนคำที่คุณเห็น"> <!--autocomplete ปิดคำแสดงผล-->
+        <p class="time-container">เวลา <span id="time">10</span> วินาที</p>
+        <p class="score-container"><span id="score">0</span> คะแนน</p>
+
+        <div id="gameover-container" class="gameover-container">
+            
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

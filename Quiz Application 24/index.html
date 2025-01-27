@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อสอบออนไลน์ | Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="queston-container">
+        <div class="question-header">
+            <h2 class="question">คำถาม</h2>
+            <ul> <!--radio แบบตัวเลือก เปลี่ยนเป็น checkbox แทนก็ได้-->
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a-text">ก.</label><!--ลิมเปลี่ยน for ทำให้เวลาเลือกเป็น a หมด-->
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer"> 
+                    <label for="b" id="b-text">ข.</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c-text">ค.</label>
+                </li>
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d-text">ง.</label>
+                </li>
+            </ul>
+        </div>
+    <button type="submit" id="submit">ส่งคำตอบ</button>
+
+    
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+

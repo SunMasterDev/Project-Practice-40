@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+    background-color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.level-btn{
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px ;
+    padding: 5px 15px;
+    position: absolute; /*เวลาจะย้ายตำแหน่ง*/
+    bottom: 30px;
+    left: 30px;
+}
+
+.settings{
+    position: absolute; /*เวลาจะย้ายตำแหน่ง*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 70px;
+    display: flex;
+    align-items: center; /*มี position แล้ว*/
+    justify-content: center;
+    transform: translateY(0);
+    transition: transition 0.3s ease-in-out;
+}
+
+.settings.hide{
+    transform: translateY(-100%); /*ย้ายไปซ่อน*/
+
+}
+
+select{
+    width: 200px;
+    padding: 5px;
+    appearance: none; /*ปิดการใช้ลูกศร ดรอปดาว*/
+    border-radius: 5px;
+}
+
+label{
+    color: white;
+}
+
+.container{
+    background-color: #344495;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    position: relative;
+    text-align: center;
+    width: 500px; /*ขนาดกล่อง container*/
+}
+
+h2{
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px;
+    margin: 0 0 40px; /*ติดกับตัว small เล็กน้อย*/
+}
+
+.word{
+    margin: 0;
+    color: yellow;
+}
+
+input{
+    border: 0;
+    border-radius: 2px;
+    font-size: 18px;
+    padding: 12px 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.time-container{
+    position: absolute; /*อ้างอิงตามกล่องที่ขอบ*/
+    top: 60px;
+    left: 25px;
+    color: greenyellow;
+}
+
+.score-container{
+    position: absolute;
+    top: 60px;
+    right: 25px;
+}
+
+.gameover-container{
+    background: inherit; /*อ้างอิงตามตัวแม่ที่ครอบ*/
+    width: 100%;
+    height: 100%;
+    position: absolute;/*อ้างอิงตามตัวแม่ที่ครอบ*/
+    top: 0;
+    left: 0;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none; /*ปิดการแสดงผล*/
+}
